@@ -2,15 +2,136 @@
     <head>
         <title>Account Setting</title>
         <link href="style.css" type="text/css" rel="stylesheet"/>
+
+        <script type="text/javascript">
+
+        function DisplayNewJob(){
+
+            document.getElementById("NewJob").style.display="block"
+            document.getElementById("JobList").style.display="none"
+        }
+
+        function DisplayJobTitle(){
+            document.getElementById("NewJob").style.display="none"
+            document.getElementById("JobList").style.display="block"
+        }
+
+        function Build(){
+
+            
+            var JobTitle= document.getElementById("txtJobTitle").value
+            var TypeOfJob= document.getElementById("JobType").value
+            var Location= document.getElementById("ddlJobLocation").value
+
+            if(TypeOfJob=="Design")
+            {
+            var Div1=document.createElement("div")
+            Div1.setAttribute('class','ContentRow')
+
+            var Div2=document.createElement("div")
+            Div2.setAttribute('class','Row')
+            Div1.appendChild(Div2)
+
+            var Div3=document.createElement("div")
+            Div3.setAttribute('class','TasksBox')
+            Div2.appendChild(Div3)
+
+            var span1= document.createElement("span")
+            span1.setAttribute('class','JobElementTitle')
+            var span1_value= document.createTextNode(JobTitle)
+            
+            var span2= document.createElement("span")
+            span2.setAttribute('class','JobElementType')
+            var span2_value= document.createTextNode(TypeOfJob)
+            
+            var span3= document.createElement("span")
+            span3.setAttribute('class','JobElementLocation')
+            var span3_value= document.createTextNode(Location)
+            
+
+            Div3.appendChild(span1_value)
+            Div3.appendChild(span2_value)
+            Div3.appendChild(span3_value)
+
+
+            var Design = document.getElementById("DesignJobs")
+            
+            Design.appendChild(Div1)
+         
+            }
+
+            else if(TypeOfJob=="Development")
+            {
+
+            var Div1=document.createElement("div")
+            Div1.setAttribute('class','ContentRow')
+
+            var Div2=document.createElement("div")
+            Div2.setAttribute('class','Row')
+            Div1.appendChild(Div2)
+
+            var Div3=document.createElement("div")
+            Div3.setAttribute('class','TasksBox')
+            Div2.appendChild(Div3)
+
+            var span1= document.createElement("span")
+            span1.setAttribute('class','JobElementTitle')
+            var span1_value= document.createTextNode(JobTitle)
+            
+            var span2= document.createElement("span")
+            span2.setAttribute('class','JobElementType')
+            var span2_value= document.createTextNode(TypeOfJob)
+            debugger
+            var span3= document.createElement("span")
+            span3.setAttribute('class','JobElementLocation')
+            var span3_value= document.createTextNode(Location)
+            
+
+            Div3.appendChild(span1_value)
+            Div3.appendChild(span2_value)
+            Div3.appendChild(span3_value)
+
+
+            var Design = document.getElementById("DevelopmentJobs")
+            
+            Design.appendChild(Div1)
+
+            }
+        }
+            
+
+            function Select(){
+                debugger
+                var Type = document.getElementById("JobLocation").value
+                var Task=document.getElementsByClassName("TasksBox")
+                
+                    for(i=0;i<Task.length;i++)
+                    
+                    Row
+                
+
+            }
+
+            
+
+            
+
+
+           
+            
+
+        
+
+        </script>
     
     </head>
     <body>
 <div class="ContentBox">
 <div class="Menu">
-<div class="MenuItems" >
+<div class="MenuItems" onclick="DisplayNewJob()" >
     <span class="MenuText" >New Job</span>
 </div>
-<div class="MenuItems" >
+<div class="MenuItems" onclick="DisplayJobTitle()">
     <span class="MenuText" >Job List</span>
 </div>
 </div>
@@ -51,7 +172,7 @@
 </div>
 <div class="actionBar">
     <div class="SaveChangesBox">
-        <button class="btn ButtonSubmit" >Save Changes</button>
+        <button class="btn ButtonSubmit" onclick="Build()">Save Changes</button>
     </div>
     <div class="CancelBox">
         <button class="btn btn-default" >Cancel</button>
@@ -69,7 +190,7 @@
             Location
         </span>
         <div class="Row">
-            <select class="FormCountrol" id="JobLocation" style="width: 30%;" >
+            <select class="FormCountrol" id="JobLocation" style="width: 30%;" onchange="Select()">
                 <option>ALL</option>
                 <option>USA</option>
                 <option>Jordan</option>

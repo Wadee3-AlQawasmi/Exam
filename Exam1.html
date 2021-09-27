@@ -104,12 +104,20 @@
                 debugger
                 var Type = document.getElementById("JobLocation").value
                 var Task=document.getElementsByClassName("TasksBox")
-                
+                if(Type=="USA")
+                {
                     for(i=0;i<Task.length;i++)
-                    
-                    Row
-                
+                    {
+                        var Value = document.getElementsByClassName("JobElementLocation")
+                        if(Value=="Jordan")
+                        {
+                            Value.style.display="none"
+                        }
 
+                    }
+                
+                
+                }
             }
 
             

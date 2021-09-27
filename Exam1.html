@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <title>Account Setting</title>
+        <link href="style.css" type="text/css" rel="stylesheet"/>
+    
+    </head>
+    <body>
+<div class="ContentBox">
+<div class="Menu">
+<div class="MenuItems" >
+    <span class="MenuText" >New Job</span>
+</div>
+<div class="MenuItems" >
+    <span class="MenuText" >Job List</span>
+</div>
+</div>
+<div class="Content" >
+
+    <div id="NewJob" class="ContentDev">
+
+
+    <div class="ContentRow">
+    <span>
+        Job Title
+    </span>
+    <div class="Row">
+        <input type="text" id="txtJobTitle" />
+    </div>
+</div>
+<div class="ContentRow">
+    <span>
+        Type of Job
+    </span>
+    <div class="Row">
+        <select class="FormCountrol" id="JobType">
+            <option>Design</option>
+            <option>Development</option>
+        </select>
+    </div>
+</div>
+<div class="ContentRow">
+    <span>
+        Location
+    </span>
+    <div class="Row">
+        <select class="FormCountrol" id="ddlJobLocation" >
+            <option>USA</option>
+            <option>Jordan</option>
+        </select>
+    </div>
+</div>
+<div class="actionBar">
+    <div class="SaveChangesBox">
+        <button class="btn ButtonSubmit" >Save Changes</button>
+    </div>
+    <div class="CancelBox">
+        <button class="btn btn-default" >Cancel</button>
+    </div>
+</div>
+</div>
+
+
+
+<div id="JobList" class="ContentDev" style="display: none;">
+
+
+    <div class="ContentRow">
+        <span>
+            Location
+        </span>
+        <div class="Row">
+            <select class="FormCountrol" id="JobLocation" style="width: 30%;" >
+                <option>ALL</option>
+                <option>USA</option>
+                <option>Jordan</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="SubTitleBlock">
+        <span class="SubTitleText">Design</span>
+    </div>
+    <div id="DesignJobs">
+    <div class="ContentRow">
+        <div class="Row">
+            <div class="TasksBox">
+                <span class="JobElementTitle">Senior Graphic Designer</span>
+                <span class="JobElementType">Full Time</span>
+                <span class="JobElementLocation">USA</span>
+            </div>
+        </div>
+    </div>
+    <div class="ContentRow">
+        <div class="Row">
+            <div class="TasksBox">
+                <span class="JobElementTitle">Senior Graphic Designer</span>
+                <span class="JobElementType">Full Time</span>
+                <span class="JobElementLocation">Jordan</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="SubTitleBlock">
+    <span class="SubTitleText">Development</span>
+</div>
+<div id="DevelopmentJobs">
+<div class="ContentRow">
+    <div class="Row">
+        <div class="TasksBox">
+            <span class="JobElementTitle">.NET Developer</span>
+            <span class="JobElementType">Full Time</span>
+            <span class="JobElementLocation">Jordan</span>
+        </div>
+    </div>
+</div>
+<div class="ContentRow">
+    <div class="Row">
+        <div class="TasksBox">
+            <span class="JobElementTitle">.NET Developer</span>
+            <span class="JobElementType">Full Time</span>
+            <span class="JobElementLocation">USA</span>
+        </div>
+    </div>
+</div>
+</div>
+
+    
+</div>
+
+  
+  
+</div>
+</div>
+
+
+    </body>
+</html>

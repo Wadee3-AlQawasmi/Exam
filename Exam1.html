@@ -18,7 +18,7 @@
 
         function Build(){
 
-            
+            debugger
             var JobTitle= document.getElementById("txtJobTitle").value
             var TypeOfJob= document.getElementById("JobType").value
             var Location= document.getElementById("ddlJobLocation").value
@@ -35,23 +35,25 @@
             var Div3=document.createElement("div")
             Div3.setAttribute('class','TasksBox')
             Div2.appendChild(Div3)
-
+                debugger
             var span1= document.createElement("span")
             span1.setAttribute('class','JobElementTitle')
             var span1_value= document.createTextNode(JobTitle)
+            span1.appendChild(span1_value)
             
             var span2= document.createElement("span")
             span2.setAttribute('class','JobElementType')
             var span2_value= document.createTextNode(TypeOfJob)
-            
+            span2.appendChild(span2_value)
+
             var span3= document.createElement("span")
             span3.setAttribute('class','JobElementLocation')
             var span3_value= document.createTextNode(Location)
-            
+            span3.appendChild(span3_value)
 
-            Div3.appendChild(span1_value)
-            Div3.appendChild(span2_value)
-            Div3.appendChild(span3_value)
+            Div3.appendChild(span1)
+            Div3.appendChild(span2)
+            Div3.appendChild(span3)
 
 
             var Design = document.getElementById("DesignJobs")
@@ -73,7 +75,7 @@
             var Div3=document.createElement("div")
             Div3.setAttribute('class','TasksBox')
             Div2.appendChild(Div3)
-
+            
             var span1= document.createElement("span")
             span1.setAttribute('class','JobElementTitle')
             var span1_value= document.createTextNode(JobTitle)
@@ -109,27 +111,44 @@
                     for(i=0;i<Task.length;i++)
                     {
                         var Value = document.getElementsByClassName("JobElementLocation")
-                        if(Value=="Jordan")
+                        if(Value[i].innerHTML=="Jordan")
                         {
-                            Value.style.display="none"
+                            Value[i].parentNode.parentNode.style.display="none"
                         }
 
                     }
-                
-                
+                }
+                else
+                if(Type=="Jordan")
+                {
+                    for(i=0;i<Task.length;i++)
+                    {
+                        var Value = document.getElementsByClassName("JobElementLocation")
+                        if(Value[i].innerHTML=="USA")
+                        {
+                            Value[i].parentNode.parentNode.style.display="none"
+                        }
+                    }
+                }
+
+                else
+                if(Type=="ALL")
+                {
+                    for(i=0;i<Task.length;i++)
+                    {
+                        var Value = document.getElementsByClassName("JobElementLocation")
+                            Value[i].parentNode.parentNode.style.display="block"
+                        
+                    }
                 }
             }
 
-            
+            function GoToJobList(){
 
-            
+            document.getElementById("NewJob").style.display="none"
+            document.getElementById("JobList").style.display="block"
 
-
-           
-            
-
-        
-
+            }
         </script>
     
     </head>
@@ -183,7 +202,7 @@
         <button class="btn ButtonSubmit" onclick="Build()">Save Changes</button>
     </div>
     <div class="CancelBox">
-        <button class="btn btn-default" >Cancel</button>
+        <button class="btn btn-default" onclick="GoToJobList()" >Cancel</button>
     </div>
 </div>
 </div>

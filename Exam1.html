@@ -35,7 +35,7 @@
             var Div3=document.createElement("div")
             Div3.setAttribute('class','TasksBox')
             Div2.appendChild(Div3)
-                debugger
+           
             var span1= document.createElement("span")
             span1.setAttribute('class','JobElementTitle')
             var span1_value= document.createTextNode(JobTitle)
@@ -79,19 +79,21 @@
             var span1= document.createElement("span")
             span1.setAttribute('class','JobElementTitle')
             var span1_value= document.createTextNode(JobTitle)
+            span1.appendChild(span1_value)
             
             var span2= document.createElement("span")
             span2.setAttribute('class','JobElementType')
             var span2_value= document.createTextNode(TypeOfJob)
-            debugger
+            span2.appendChild(span2_value)
+            
             var span3= document.createElement("span")
             span3.setAttribute('class','JobElementLocation')
             var span3_value= document.createTextNode(Location)
-            
+            span3.appendChild(span3_value)
 
-            Div3.appendChild(span1_value)
-            Div3.appendChild(span2_value)
-            Div3.appendChild(span3_value)
+            Div3.appendChild(span1)
+            Div3.appendChild(span2)
+            Div3.appendChild(span3)
 
 
             var Design = document.getElementById("DevelopmentJobs")
